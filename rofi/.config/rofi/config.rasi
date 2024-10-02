@@ -1,16 +1,19 @@
+//modi: "run,window,drun";
+//display-run: " 🏃  Run ";
+//display-window: " 🪟  Window";
+
 configuration{
-    modi: "run,window,drun";
+    modi: "drun";
     icon-theme: "Oranchelo";
     show-icons: true;
-    terminal: "alacritty";
+    terminal: "kitty";
     drun-display-format: "{icon} {name}";
     location: 0;
     disable-history: false;
-    hide-scrollbar: true;
+    hide-scrollbar: false;
     display-drun: " 🖥️  All ";
-    display-run: " 🏃  Run ";
-    display-window: " 🪟  Window";
     sidebar-mode: true;
 }
 
 @theme "catppuccin-mocha"
+

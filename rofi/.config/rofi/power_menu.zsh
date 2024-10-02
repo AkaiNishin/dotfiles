@@ -9,7 +9,7 @@ SELECTION=$(echo -e $OPTIONS | rofi -dmenu -p "System actions")
 # Ejecutar la acción seleccionada
 case "$SELECTION" in
     "Turn off")
-        sudo systemctl poweroff
+        systemctl poweroff
         ;;
     "Log out")
         pkill -KILL -u $USER
