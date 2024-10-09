@@ -19,27 +19,33 @@
 button:hover {
     background: inherit;
     color: @green;
-    border-radius: 1rem;
 }
 
 #workspaces {
-    border-radius: 1rem;
     margin: 5px;
     background-color: @surface0;
     margin-left: 1rem;
     margin-right: 1rem;
+    border-radius: 1rem;
+    border-bottom: 2px solid @lavender;
+}
+
+#workspaces button:first-child{
+    border-radius: 1rem 0px 0px 1rem;
+}
+
+#workspaces button:last-child{
+    border-radius: 0px 1rem 1rem 0px;
 }
 
 #workspaces button {
     padding: 0.4rem;
     color: @lavender;
-    border-radius: 1rem;
-    border-bottom: 2px solid @lavender;
 }
 
 #workspaces button.active {
     color: @green;
-    border-bottom: 2px solid @green;
+    border-top: 2px solid @green;
 }
 
 #custom-power,
@@ -61,6 +67,7 @@ button:hover {
 #tray {
     margin-right: 1rem;
     border-radius: 1rem;
+    border-bottom: 2px solid @mauve
 }
 
 #clock {
@@ -87,6 +94,7 @@ button:hover {
 #battery {
     color: @green;
     border-bottom: 2px solid @green;
+    border-radius: 1rem 0px 0px 1rem;
 }
 
 #backlight {
