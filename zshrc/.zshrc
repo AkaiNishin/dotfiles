@@ -1,7 +1,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-neofetch
+fastfetch
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -55,7 +55,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/Software/Xilinx/Vivado/2024.1/settings64.sh
+# source ~/Software/Xilinx/Vivado/2024.1/settings64.sh
 
 # User configuration
 
