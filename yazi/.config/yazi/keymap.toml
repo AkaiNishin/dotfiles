@@ -18,3 +18,69 @@ on = [ "b", "D" ]
 run = "plugin bookmarks --args=delete_all"
 desc = "Delete all bookmarks"
 
+[[manager.prepend_keymap]]
+on = [ "P", "s" ]
+run = "plugin projects --args=save"
+desc = "Save current project"
+
+[[manager.prepend_keymap]]
+on = [ "P", "l" ]
+run = "plugin projects --args=load"
+desc = "Load project"
+
+[[manager.prepend_keymap]]
+on = [ "P", "P" ]
+run = "plugin projects --args=load_last"
+desc = "Load last project"
+
+[[manager.prepend_keymap]]
+on = [ "P", "d" ]
+run = "plugin projects --args=delete"
+desc = "Delete project"
+
+[[manager.prepend_keymap]]
+on = [ "P", "D" ]
+run = "plugin projects --args=delete_all"
+desc = "Delete all projects"
+
+[[manager.prepend_keymap]]
+on = [ "P", "m" ]
+run = "plugin projects --args='merge current'"
+desc = "Merge current tab to other projects"
+
+[[manager.prepend_keymap]]
+on = [ "P", "M" ]
+run = "plugin projects --args='merge all'"
+desc = "Merge current project to other projects"
+
+[[manager.prepend_keymap]]
+on   = "F"
+run  = "plugin smart-filter"
+desc = "Smart filter"
+
+[[manager.prepend_keymap]]
+on = ["C"]
+run = "plugin ouch --args=zip \"$@\""
+desc = "Compress with ouch"
+
+[[manager.prepend_keymap]]
+on = ["<C-1>"]
+run = "plugin --sync toggle-view --args=parent"
+desc = "Toggle parent"
+[[manager.prepend_keymap]]
+on = ["<C-2>"]
+run = "plugin --sync toggle-view --args=current"
+desc = "Toggle current"
+[[manager.prepend_keymap]]
+on = ["<C-3>"]
+run = "plugin --sync toggle-view --args=preview"
+desc = "Toggle preview"
+
+[[manager.prepend_keymap]]
+on = ["T", "r"]
+run = "plugin restore"
+desc = "Restore last deleted files/folders"
+# [[manager.keymap]]
+# on = ["d","u"]
+# run = "plugin restore"
+# desc = "Restore last deleted files/folders"
