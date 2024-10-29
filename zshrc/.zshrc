@@ -80,5 +80,7 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+
 eval "$(tmuxifier init -)"
+eval "$(zoxide init zsh)"
 
