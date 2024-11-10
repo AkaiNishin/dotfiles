@@ -11,12 +11,12 @@ return {
                 null_ls.builtins.completion.tags,
                 null_ls.builtins.completion.luasnip,
                 null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.verible,
+                null_ls.builtins.formatting.verible_verilog_format,
                 null_ls.builtins.formatting.asmfmt,
             },
         })
         vim.keymap.set("n", "<leader>gf", function()
-            local supported_filetypes = { "cpp", "c", "python", "lua" }
+            local supported_filetypes = { "cpp", "c", "python", "lua", "systemverilog", "v"}
             local function is_supported_filetype(filetype)
                 for _, ft in ipairs(supported_filetypes) do
                     if ft == filetype then

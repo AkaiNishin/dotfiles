@@ -70,23 +70,7 @@ return {
                             flake8 = { enabled = false },
                             pyflakes = { enabled = false },
                             pycodestyle = {
-                                --     ignore = {
-                                --         "all",
-                                --         'E226',
-                                --         'E266',
-                                --         'E302',
-                                --         'E303',
-                                --         'E304',
-                                --         'E305',
-                                --         'E402',
-                                --         'C0103',
-                                --         'W0104',
-                                --         'W0621',
-                                --         'W391',
-                                --         'W503',
-                                --         'W504'
-                                -- },
-                                maxLineLength = 99,
+                               maxLineLength = 99,
                             },
                         },
                     },
@@ -111,19 +95,17 @@ return {
                 capabilities = capabilities,
             })
 
-            -- lspconfig.asm_lsp.setup({
-            --     capabilities = capabilities
-            -- })
-            -- lspconfig.svls.setup({
-            --     capabilities = capabilities,
-            --     root_dir = find_root_dir,
-            --     cmd = {"svls"},
-            --     -- filetypes = {"verilog", "systemverilog"},
-            --     filetypes = {},
-            -- })
-            -- lspconfig.texlab.setup({
-            --     capabilities = capabilities
-            -- })
+            lspconfig.asm_lsp.setup({
+                capabilities = capabilities
+            })
+            lspconfig.svls.setup({
+                capabilities = capabilities,
+                cmd = {"svls"},
+                filetypes = {"verilog", "systemverilog"},
+            })
+            lspconfig.texlab.setup({
+                capabilities = capabilities
+            })
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
@@ -133,7 +115,6 @@ return {
     {
         'davidhalter/jedi-vim',
         config = function()
-            -- hola
         end,
     },
 }
