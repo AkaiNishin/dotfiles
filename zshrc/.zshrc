@@ -55,7 +55,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-# source ~/Software/Xilinx/Vivado/2024.1/settings64.sh
+source ~/Software/Xilinx/Vivado/2024.1/settings64.sh
 
 # User configuration
 
@@ -78,6 +78,7 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export PICO_SDK_PATH="$HOME/Programming/pico/pico-sdk/"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.tmuxifier/bin:$PATH"
 
