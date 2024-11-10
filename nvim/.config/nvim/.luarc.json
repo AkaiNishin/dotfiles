@@ -1,0 +1,9 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "client",
+        "util",
+        "let",
+        "HOME"
+    ]
+}
