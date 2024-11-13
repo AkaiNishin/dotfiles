@@ -21,6 +21,12 @@ return {
                         require("telescope.themes").get_dropdown({}),
                     },
                 },
+                defaults = {
+                    file_ignore_patterns = {
+                        "build",
+                        "Dependencies",
+                    },
+                },
             })
             require("telescope").load_extension("ui-select")
         end,
