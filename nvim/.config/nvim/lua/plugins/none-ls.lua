@@ -5,9 +5,10 @@ return {
         null_ls.setup({
             sources = {
                 null_ls.builtins.formatting.stylua,
-                null_ls.builtins.formatting.cmake_format,
-                null_ls.builtins.formatting.clang_format,
-                null_ls.builtins.diagnostics.cmake_lint,
+                null_ls.builtins.formatting.cmakelang,
+                null_ls.builtins.formatting.clang_format.with({
+                    extra_args = {"--style=file"},
+                }),
                 null_ls.builtins.completion.tags,
                 null_ls.builtins.completion.luasnip,
                 null_ls.builtins.formatting.black,
@@ -16,7 +17,7 @@ return {
             },
         })
         vim.keymap.set("n", "<leader>gf", function()
-            local supported_filetypes = { "cpp", "c", "python", "lua", "systemverilog", "v"}
+            local supported_filetypes = { "cpp", "c", "python", "lua", "systemverilog", "v", "cmake"}
             local function is_supported_filetype(filetype)
                 for _, ft in ipairs(supported_filetypes) do
                     if ft == filetype then
