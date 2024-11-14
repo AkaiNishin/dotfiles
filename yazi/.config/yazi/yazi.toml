@@ -1,4 +1,7 @@
 [opener]
+play = [
+	{ run = 'flatpak run org.videolan.VLC "$@"', orphan = true, for = "unix" },
+]
 edit = [
 	{ run = 'nvim "$@"', block = true, for = "unix" },
 ]
