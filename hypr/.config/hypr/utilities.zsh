@@ -1,6 +1,6 @@
 #!/bin/bash
 
-STREAMERS=("banished_pheasant" "MaruFideos" "Meica05" "TheKasaneru", "TipitoEnojado")
+STREAMERS=("banished_pheasant" "MaruFideos" "foodichafa" "Meica05" "TheKasaneru", "TipitoEnojado")
 SELECTED=$(printf "%s\n" "${STREAMERS[@]}" | rofi -dmenu -p "Select twitch streamer: ")
 
 [ -z "$SELECTED" ] && exit
