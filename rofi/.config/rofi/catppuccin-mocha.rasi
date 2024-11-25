@@ -55,10 +55,12 @@ entry {
     text-color: @fg-col;
     background-color: @bg-col;
     border-radius: 10px;
+    border-color: #CBA6F7;
 }
 
 listview {
-    border: 0px 0px 0px;
+    border: 0px 0px 5px 0px;
+    border-color: #CBA6F7;
     padding: 6px 0px 0px;
     margin: 10px 15px 0px 20px;
     columns: 2;
@@ -81,6 +83,7 @@ element selected {
     text-color: #A6E3A1;
     border: 2px;
     border-color: #A6E3A1;
+    border-radius: 8;
 }
 
 mode-switcher {
