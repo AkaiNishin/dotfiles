@@ -1,12 +1,12 @@
 {
     "layer": "top",
     "position": "top",
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["custom/os", "hyprland/workspaces", "wlr/taskbar"],
     "modules-center": ["custom/music"],
-    "modules-right": ["tray", "battery", "pulseaudio", "backlight", "clock", "custom/power"],
+    "modules-right": ["tray", "battery", "pulseaudio", "backlight", "memory", "clock", "custom/power"],
     "clock": {
-    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "format": "  {:%a %d %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "hyprland/workspaces": {
 	    "format": "{icon}",
@@ -23,70 +23,98 @@
 	    },
 	    "sort-by-number": true,
         "active-only": false,
-        "all-outputs": true,
+        "all-outputs": false,
         "persistent-workspaces":{
             "DP-1": [1, 2, 3, 4, 5, 6]
-        }
+        },
+        "on-scroll-up": "hyprctl dispatch workspace r+1",
+        "on-scroll-down": "hyprctl dispatch workspace r-1",
     },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
+    "battery": {
+        "states": {
+        "warning": 30,
+        "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-warning": "{icon}  {capacity}%",
+        "format-critical": "{icon}  {capacity}%",
+        "format-charging": "   {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        "format-full": "   {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip-format": "{time}"
     },
-    "format": "<span size='13000' foreground='#a6e3a1'>{icon} </span> {capacity}%",
-    "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {capacity}%",
-    "format-critical": "<span size='13000' foreground='#E38C8F'>{icon} </span> {capacity}%",
-    "format-charging": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-alt": "<span size='13000' foreground='#B1E3AD'>{icon} </span> {time}",
-    "format-full": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
-    "format-icons": ["", "", "", "", ""],
-    "tooltip-format": "{time}"
-  },
-  "network": {
-    "format-wifi": "<span size='13000' foreground='#f5e0dc'>  </span>{essid}",
-    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰤭  </span> Disconnected",
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>  </span>Disconnected",
-    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
-    "on-click": "nm-connection-editor"
-  },
-  "pulseaudio": {
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "format": "<span size='13000' foreground='#89b4fa'>{icon} </span> {volume}%",
-    "format-muted": "<span size='14000' foreground='#89b4fa'></span> Muted",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", ""]
+    "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "󰤭  Disconnected",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "   Disconnected",
+        "tooltip-format-wifi": "Signal Strenght: {signalStrength}%",
+        "on-click": "nm-connection-editor"
     },
-    "on-click-right": "pavucontrol"
-  },
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10
-  },
-  "backlight": {
-    "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
-
-  },
+    "pulseaudio": {
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "format": "{icon}  {volume}%",
+        "format-muted": "  Muted",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +3%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -3%",
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+    },
     "custom/music": {
         "format": "  {}",
         "escape": true,
-        "interval": 5,
+        "interval": 3,
         "tooltip": false,
         "exec": "playerctl metadata --format='{{ title }}'",
         "on-click": "playerctl play-pause",
-        "max-length": 50
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "max-length": 40
     },
 	"custom/power": {
 		"format": " ",
 	    "on-click": "wlogout"
-    }
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 25,
+        "spacing": 1,
+        "on-click-middle": "close",
+        "tooltip-format": "{title}",
+        "ignore-list": [],
+        "active-only": true,
+        "all-outputs": false,
+        "on-click": "activate",
+        "on-click-right": "close",
+    },
+    "memory": {
+        "interval": 10,
+        "format": "  {percentage}%",
+        "max-length": 10,
+        "tooltip": true,
+        "tooltip-format": "RAM - {used:0.1f}GiB used",
+    },
+    "custom/os":{
+        "format": "<span size='16000'>󰣇</span>",
+        "on-click": "exec $HOME/dotfiles/waybar/.config/waybar/runWidget.sh",
+    },
 }
 

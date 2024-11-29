@@ -5,6 +5,8 @@
     font-size: 14px;
     min-height: 0;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
 }
 
 #waybar {
@@ -24,13 +26,10 @@ button:hover {
 #workspaces {
     margin: 5px;
     background-color: @surface0;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.25rem;
     border-radius: 1rem;
-    border-bottom: 2px solid @lavender;
-    border-top: 2px solid @lavender;
-    border-left: 2px solid @lavender;
-    border-right: 2px solid @lavender;
+    border: 2px solid @lavender;
 }
 
 #workspaces button:first-child{
@@ -55,6 +54,37 @@ button:hover {
     color: @green; 
 }
 
+#taskbar {
+    margin: 5px;
+    background-color: @surface0;
+    margin-left: 0.25rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+    border: 2px solid @lavender;
+}
+
+#taskbar button:first-child{
+    border-radius: 1rem 0px 0px 1rem;
+}
+
+#taskbar button:last-child{
+    border-radius: 0px 1rem 1rem 0px;
+}
+
+#taskbar button {
+    padding: 0.4rem;
+    color: @lavender;
+}
+
+#taskbar button.active {
+    color: @green;
+}
+
+#taskbar button:only-child {
+    border-radius: 1rem;
+    color: @green; 
+}
+
 #custom-power,
 #pulseaudio,
 #clock,
@@ -67,60 +97,74 @@ button:hover {
 #tray,
 #network{
     background-color: @surface0;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
     margin: 5px 0;
 }
 
 #tray {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     border-radius: 1rem;
     border: 2px solid @mauve
 }
 
 #clock {
-    color: @blue;
-    border-bottom: 2px solid @blue;
-    border-top: 2px solid @blue;
+    color: @teal;
+    border-bottom: 2px solid @mauve;
+    border-top: 2px solid @mauve;
 }
 
 #clock.date {
-    color: @blue;
-    border-bottom: 2px solid @blue;
-    border-top: 2px solid @blue;
+    color: @teal;
+    border-bottom: 2px solid @mauve;
+    border-top: 2px solid @mauve;
 }
 
 #pulseaudio {
-    color: @maroon;
-    border-bottom: 2px solid @marron;
-    border-top: 2px solid @marron;
+    color: @flamingo;
+    border-bottom: 2px solid @mauve;
+    border-top: 2px solid @mauve;
+}
+
+#memory {
+    color: @red;
+    border-bottom: 2px solid @mauve;
+    border-top: 2px solid @mauve;
 }
 
 #network {
-    color: @pink;
-    border-bottom: 2px solid @pink;
-    border-top: 2px solid @pink;
+    color: @green;
+    border-bottom: 2px solid @mauve;
+    border-top: 2px solid @mauve;
     border-radius: 1rem 0px 0px 1rem;
 }
 
 #battery {
     color: @green;
-    border-bottom: 2px solid @green;
-    border-left: 2px solid @green;
-    border-top: 2px solid @green;
+    border-bottom: 2px solid @mauve;
+    border-left: 2px solid @mauve;
+    border-top: 2px solid @mauve;
     border-radius: 1rem 0px 0px 1rem;
 }
 
 #backlight {
     color: @yellow;
-    border-bottom: 2px solid @yellow;
-    border-top: 2px solid @yellow;
+    border-bottom: 2px solid @mauve;
+    border-top: 2px solid @mauve;
 }
 
 #custom-power {
-    color: @red;
-    border-bottom: 2px solid @red;
-    border-right: 2px solid @red;
-    border-top: 2px solid @red;
+    color: @maroon;
+    border-bottom: 2px solid @mauve;
+    border-right: 2px solid @mauve;
+    border-top: 2px solid @mauve;
     border-radius: 0px 1rem 1rem 0px;
+    margin-right: 1rem;
 }
 
+#custom-os {
+    color: @pink;
+    border-radius: 1rem;
+    margin-left: 1.5rem;
+    padding: 0.5rem 0.5rem;
+    margin: 5px 0;
+}
