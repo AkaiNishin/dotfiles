@@ -7,8 +7,7 @@ if [ "$firstRun" == "y" ]; then
     cd "$HOME/dotfiles"
     sudo pacman -Syu
     ### install config files minimun ###
-    sudo pacman -S --needed --noconfirm stow kitty fastfetch tmux neovim
-    sudo pacman -S --needed --noconfirm hyprland hyprpaper hyprcursor waybar rofi
+    sudo pacman -S --needed --noconfirm stow kitty fastfetch tmux neovim hyprland hyprpaper hyprcursor waybar rofi eww
     ### development ### 
     sudo pacman -S --needed --noconfirm clang cmake git lazygit ctags python stlink minicom gcc-arm-none-eabi libnewlib-arm-none-eabi build-essential
     #libraries
@@ -16,9 +15,9 @@ if [ "$firstRun" == "y" ]; then
     ### basic stuff necessary ###
     sudo pacman -S --needed --noconfirm firefox flatpak mpv yazi texlive
     ### utilies ####
-    sudo pacman -S --needed --noconfirm zsh bat btop dunst cowsay fzf gnuplot zoxide zip, unzip vlc noto-fonts-cjk fcitx5-mozc noto-fonts-emoji
+    sudo pacman -S --needed --noconfirm zsh bat btop dunst cowsay fzf gnuplot zoxide zip, unzip vlc noto-fonts-cjk fcitx5-mozc noto-fonts-emoji rar unrar mpd mpc ncmpcpp
     ### sistem requeriments ###
-    sudo pacman -S --needed --noconfirm base-devel binutils ttf-meslo-nerd cargo npm
+    sudo pacman -S --needed --noconfirm base-devel binutils ttf-meslo-nerd cargo npm plasma-wayland-protocols ttf-jetbrains ttf-iosevka
 
     ### setup enviroment ###
     # Install yay from AUR
@@ -29,7 +28,7 @@ if [ "$firstRun" == "y" ]; then
     cd "$HOME" || exit
     rm -rf "$HOME/yay"
     
-    yay -S --needed --noconfirm wlogout hyprshot hyprpicker visual-studio-code-bin pavucontrol xdg-desktop-portal-hyprland-git
+    yay -S --needed --noconfirm wlogout hyprshot hyprpicker visual-studio-code-bin pavucontrol xdg-desktop-portal-hyprland-git ttf-icomoon-feather
     
     # init python venv
     echo "Inicializing python virtual venv enviroment...Installing libraries"
