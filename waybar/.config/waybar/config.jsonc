@@ -5,7 +5,7 @@
     "modules-center": ["custom/music"],
     "modules-right": ["tray", "battery", "pulseaudio", "backlight", "memory", "clock", "custom/power"],
     "clock": {
-        "format": "  {:%a %d %H:%M}",
+        "format": "   {:%a %d %H:%M}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
     "hyprland/workspaces": {
@@ -55,7 +55,7 @@
     },
     "pulseaudio": {
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "format": "{icon}  {volume}%",
+        "format": "{icon}   {volume}%",
         "format-muted": "  Muted",
         "format-icons": {
             "headphone": "",
@@ -75,7 +75,7 @@
         "spacing": 10
     },
     "backlight": {
-        "format": "{percent}% {icon}",
+        "format": "{icon}  {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
     },
     "custom/music": {
@@ -114,7 +114,8 @@
     },
     "custom/os":{
         "format": "<span size='16000'>󰣇</span>",
-        "on-click": "exec $HOME/dotfiles/waybar/.config/waybar/runWidget.sh",
+        "on-click-right": "exec $HOME/dotfiles/waybar/.config/waybar/runWidget.sh",
+        "on-click": "exec $HOME/dotfiles/eww/.config/eww/launch_dashboard",
     },
 }
 
